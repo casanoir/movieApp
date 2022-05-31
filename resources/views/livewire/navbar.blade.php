@@ -14,7 +14,12 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+            <div >
+                <form class="form-inline my-2 my-lg-0" id="searchForm">
+                    @csrf
+                    <input class="search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
                 <!-- Authentication Links -->
@@ -31,12 +36,7 @@
                         </li>
                     @endif
                 @else
-                <div >
-                    <form class="form-inline my-2 my-lg-0" id="searchForm">
-                        @csrf
-                        <input class="search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                </div>
+                
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}

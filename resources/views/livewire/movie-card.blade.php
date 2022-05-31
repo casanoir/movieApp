@@ -1,20 +1,21 @@
+@foreach ($movies['items'] as $movie)
 <div class="movie">
-    <div class="movie-img"></div>
+  
+  <div class="movie-img" style="background-image: url({{$movie["image"]}});"></div>
     <div class="text-movie-cont">
         <div class="mr-grid">
             <div class="col1">
-                <h1>Interstellar</h1>
+                <h1>{{$movie["title"]}}</h1>
             </div>
         </div>
         <div class="mr-grid summary-row">
             <div class="col2">
-            <h5>SUMMARY</h5>
+            <h5>CREW</h5>
             </div>
         </div>
         <div class="mr-grid">
             <div class="col1">
-            <p class="movie-description">A group of elderly people are giving interviews about having lived in a climate of crop blight and constant dust reminiscent of The Great
-                Depression of the 1930's. The first one seen is an elderly woman stating her father was a farmer, but did not start out that way. </p>
+            <p class="movie-description">{{$movie["crew"]}} </p>
             </div>
         </div>
         @auth
@@ -39,3 +40,4 @@
         @endauth
     </div>
 </div>
+@endforeach
