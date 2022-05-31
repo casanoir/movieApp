@@ -16,8 +16,10 @@ class MovieCard extends Component
     {
         return view('livewire.movie-card');
     }
-    public function addToFavorite(){
-        $this->favorite=true;
-        $refresh;
+    public function addToFavorite($movieId){
+        dd($this->movieId=$movieId);
+        // $this->movieId=$movieId;
+        // $this->favorite=true;
+        return view('homesearch');
     }
 }

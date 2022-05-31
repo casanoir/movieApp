@@ -18,4 +18,4 @@ Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/myFavorite', [App\Http\Controllers\HomeController::class, 'favorite'])->name('favorite');
+Route::get('/myFavorite', [App\Http\Controllers\FavoriteController::class, 'favorite'])->name('favorite');

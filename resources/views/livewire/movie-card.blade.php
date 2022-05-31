@@ -15,25 +15,19 @@
         </div>
         <div class="mr-grid">
             <div class="col1">
-            <p class="movie-description">{{$movie["crew"]}} </p>
+            <p class="movie-description">{{$movie["crew"]}} {{$movie["id"]}}</p>
             </div>
         </div>
         @auth
         <div class="mr-grid action-row">
-            <div class="col2">
-                <div class="action-btn">
-                    <h3>WATCH TRAILER</h3>
-                </div>
-            </div>
             @if($favorite)
                 <div class="col2">
-                    
                 </div>
             @else
                 <div class="col2">
-                    <div class="action-btn" wire:click="addToFavorite()">
+                    <button class="action-btn" wire:click="addToFavorite({{$movie["id"]}})">
                         <h3>ADD TO FAVORITE</h3>
-                    </div>
+                    </button>
                 </div>
             @endif
         </div>
